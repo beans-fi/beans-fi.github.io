@@ -1,1 +1,1882 @@
-Hello
+<!DOCTYPE html>
+<html class="h-full bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="h-full">
+    <!-- TOP BAR-->
+    <header class="bg-indigo-600">
+      <nav class="max-w-8xl px-2" aria-label="Top">
+        <div
+          class="flex w-full items-center justify-between border-b border-indigo-500 py-4 lg:border-none"
+        >
+          <div class="flex items-left pl-4">
+            <div class="hidden space-x-8 lg:block">
+              <button
+                class="bg-blue-300 hover:bg-blue-700 py-0 px-4 rounded drop-shadow-lg"
+              >
+                <a
+                  href="#"
+                  class="font-medium text-sm text-blue hover:text-indigo-50"
+                  >Tuloslaskelma</a
+                >
+              </button>
+              <button
+                class="bg-blue-900 hover:bg-blue-700 text-white py-0 px-4 rounded drop-shadow-lg"
+              >
+                <a
+                  href="#"
+                  class="font-light text-sm text-white hover:text-indigo-50"
+                  >Toteuma & ennuste</a
+                >
+              </button>
+              <button
+                class="bg-blue-900 hover:bg-blue-700 text-white py-0 px-4 rounded drop-shadow-lg"
+              >
+                <a
+                  href="#"
+                  class="font-light text-sm text-white hover:text-indigo-50"
+                  >Tase</a
+                >
+              </button>
+              <button
+                class="bg-blue-900 hover:bg-blue-700 text-white py-0 px-4 rounded drop-shadow-lg"
+              >
+                <a
+                  href="#"
+                  class="font-light text-sm text-white hover:text-indigo-50"
+                  >Budjetointi</a
+                >
+              </button>
+              <button
+                class="bg-blue-900 hover:bg-blue-700 text-white py-0 px-4 rounded drop-shadow-lg"
+              >
+                <a
+                  href="#"
+                  class="font-light text-sm text-white hover:text-indigo-50"
+                  >Näkymät</a
+                >
+              </button>
+            </div>
+          </div>
+          <!-- Profile pic -->
+          <div class="ml-10 space-x-4 pr-4">
+            <img
+              class="h-10 w-10 rounded-full"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--
+This example requires updating your template:
+
+```
+<html class="h-full">
+<body class="h-full">
+```
+-->
+    <div>
+      <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+      <div class="relative z-40 md:hidden" role="dialog" aria-modal="true">
+        <!--
+          Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+
+          Entering: "transition-opacity ease-linear duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "transition-opacity ease-linear duration-300"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+
+        <div class="fixed inset-0 z-40 flex">
+          <!--
+                                      Off-canvas menu, show/hide based on off-canvas menu state.
+
+                                      Entering: "transition ease-in-out duration-300 transform"
+                                        From: "-translate-x-full"
+                                        To: "translate-x-0"
+                                      Leaving: "transition ease-in-out duration-300 transform"
+                                        From: "translate-x-0"
+                                        To: "-translate-x-full"
+                                    -->
+          <div class="relative flex w-full max-w-xs flex-1 flex-col bg-white">
+            <!--
+                                                                  Close button, show/hide based on off-canvas menu state.
+
+                                                                  Entering: "ease-in-out duration-300"
+                                                                    From: "opacity-0"
+                                                                    To: "opacity-100"
+                                                                  Leaving: "ease-in-out duration-300"
+                                                                    From: "opacity-100"
+                                                                    To: "opacity-0"
+                                                                -->
+            <div class="absolute top-0 right-0 -mr-12 pt-2">
+              <button
+                type="button"
+                class="ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              >
+                <span class="sr-only">Close sidebar</span>
+                <!-- Heroicon name: outline/x-mark -->
+                <svg
+                  class="h-6 w-6 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div class="h-0 flex-1 overflow-y-auto pt-5 pb-4">
+              <nav class="mt-5 space-y-1 px-2">
+                <a
+                  href="#"
+                  class="bg-gray-100 text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                >
+                  Tuloslaskelma
+                </a>
+
+                <a
+                  href="#"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                >
+                  Toteuma & ennuste
+                </a>
+
+                <a
+                  href="#"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                >
+                  Tase
+                </a>
+
+                <a
+                  href="#"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                >
+                  Budjetointi
+                </a>
+
+                <a
+                  href="#"
+                  class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                >
+                  Näkymät
+                </a>
+              </nav>
+            </div>
+          </div>
+
+          <div class="w-14 flex-shrink-0">
+            <!-- Force sidebar to shrink to fit close icon -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Static sidebar for desktop -->
+      <div class="hidden md:fixed md:flex md:w-60 md:flex-col left-5 top-[94px]">
+        <div class="card bg-gray-50 overflow-visible">
+          <!-- Sidebar component, swap this element with another sidebar if you like -->
+          <div class="flex min-h-0 flex-1 flex-col bg-gray-50 overflow-visible">
+            <div
+              class="flex flex-1 flex-col git addbg-gray-50 overflow-visible"
+            >
+              <div class="flex flex-shrink-0 items-center pr-4">
+                <h1 class="font-bold">BEANS</h1>
+              </div>
+
+              <div class="flex flex-shrink-0 items-center pr-4 mt-2">
+                <h2 class="font-bold">Tuloslaskelma</h2>
+              </div>
+
+              <div class="border-b border-grey-200 mt-4"></div>
+
+              <div class="flex flex-shrink-0 items-center pr-4 mt-4 mb-4">
+                <div class="mr-1">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="font-bold">Valinnat</h2>
+              </div>
+
+              <div class="ml-0 mb-2 flex flex-col">
+                <label class="bg-gray-50" for="kustannuspaikka"
+                  >Kustannuspaikka</label
+                >
+                <select
+                  name="kustannuspaikka"
+                  id="kustannuspaikka"
+                  class="bg-gray-50 drop-shadow-xl flex-1 mt-2 mb-2 border border-gray-300 rounded p-2"
+                >
+                  <option value="kustannuspaikka1">Kustannuspaikka 1</option>
+                  <option value="kustannuspaikka2">Kustannuspaikka 2</option>
+                  <option value="kustannuspaikka3">Kustannuspaikka 3</option>
+                  <option value="kustannuspaikka4">Kustannuspaikka 4</option>
+                  <option value="kustannuspaikka5">Kustannuspaikka 5</option>
+                  <option value="kustannuspaikka6">Kustannuspaikka 6</option>
+                </select>
+              </div>
+
+              <div class="ml-0 mb-2 flex flex-col">
+                <label class="bg-gray-50 row" for="dimensio1"
+                  >Dimensio 1<br
+                /></label>
+                <select
+                  name="dimensio1"
+                  id="dimensio1"
+                  class="bg-gray-50 drop-shadow-xl flex-1 mt-2 mb-2 border border-gray-300 rounded p-2"
+                >
+                  <option value="dimensio11">Dimensio X</option>
+                  <option value="dimensio12">Dimensio X 2</option>
+                  <option value="dimensio13">Dimensio X 3</option>
+                  <option value="dimensio14">Dimensio X 4</option>
+                  <option value="dimensio15">Dimensio X 5</option>
+                  <option value="dimensio16">Dimensio X 6</option>
+                </select>
+              </div>
+
+              <div class="ml-0 mb-2 flex flex-col">
+                <label for="dimensio2">Dimensio 2<br /></label>
+                <select
+                  name="dimensio2"
+                  id="dimensio2"
+                  class="bg-gray-50 drop-shadow-xl flex-1 mt-2 mb-2 border border-gray-300 rounded p-2"
+                >
+                  <option value="dimensio21">Dimensio Y</option>
+                  <option value="dimensio22">Dimensio Y 2</option>
+                  <option value="dimensio23">Dimensio Y 3</option>
+                  <option value="dimensio24">Dimensio Y 4</option>
+                  <option value="dimensio25">Dimensio Y 5</option>
+                  <option value="dimensio26">Dimensio Y 6</option>
+                </select>
+              </div>
+
+              <div class="ml-0 mb-2 flex flex-col">
+                <label for="dimensio3">Dimensio 3<br /></label>
+                <select
+                  name="dimensio3"
+                  id="dimensio3"
+                  class="bg-gray-50 drop-shadow-xl flex-1 mt-2 mb-2 border border-gray-300 rounded p-2"
+                >
+                  <option value="kustannuspaikka1">Dimensio Z</option>
+                  <option value="kustannuspaikka2">Dimensio Z 2</option>
+                  <option value="kustannuspaikka3">Dimensio Z 3</option>
+                  <option value="kustannuspaikka4">Dimensio Z 4</option>
+                  <option value="kustannuspaikka5">Dimensio Z 5</option>
+                  <option value="kustannuspaikka6">Dimensio Z 6</option>
+                </select>
+              </div>
+
+              <div class="border-b border-grey-200 mt-2 ml-4"></div>
+
+              <div class="flex flex-shrink-0 items-center pr-4 mt-4 mb-4">
+                <div class="mr-1">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                    ></path>
+                  </svg>
+                </div>
+                <h2 class="font-bold">Vertailu</h2>
+              </div>
+
+              <div class="flex flex-col">
+                <button
+                  class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mb-4 flex items-start drop-shadow-xl"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-light text-white hover:text-indigo-50"
+                    >% Liikevaihdosta</a
+                  >
+                </button>
+
+                <button
+                  class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mb-4 flex items-start drop-shadow-xl"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-light text-white hover:text-indigo-50"
+                    >Muutos</a
+                  >
+                </button>
+
+                <button
+                  class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded flex items-start drop-shadow-xl"
+                >
+                  <a
+                    href="#"
+                    class="text-sm font-light text-white hover:text-indigo-50"
+                    >Vertailu budjettiin</a
+                  >
+                </button>
+              </div>
+
+              <div class="border-b border-grey-200 mt-6"></div>
+
+              <div class="flex flex-shrink-0 items-center pr-4 mt-4 mb-1 ml-0">
+                <div class="mr-1">
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h2 class="font-bold">Aikajakso</h2>
+              </div>
+
+              <div class="ml-0 mb-2 flex flex-col">
+                <label for="aikajakso"></label>
+                <select
+                  name="aikajakso"
+                  id="aikajakso"
+                  class="bg-gray-50 drop-shadow-xl flex-1 mt-2 mb-2 border border-gray-300 rounded p-2"
+                >
+                  <option value="aikajakso1">2022</option>
+                  <option value="aikajakso2">2021</option>
+                  <option value="aikajakso3">2020</option>
+                  <option value="aikajakso4">2019</option>
+                  <option value="aikajakso5">2018</option>
+                  <option value="aikajakso6">2017</option>
+                </select>
+              </div>
+
+              <div class="ml-0">
+                <div>
+                  <a
+                    href="#"
+                    class="bg-blue-300 hover:bg-blue-100 text-black text-center py-2 pl-3 pr-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    1
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-300 hover:bg-blue-100 text-black text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    2
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-300 hover:bg-blue-100 text-black text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    3
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    4
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    5
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    6
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    7
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    8
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 pl-3 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    9
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    10
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 px-2 mb-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    11
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-blue-900 hover:bg-blue-600 text-white text-center py-2 px-2 rounded-full h-8 w-8 inline-flex items-center text-xs drop-shadow-lg"
+                  >
+                    12
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex flex-col mt-4">
+                <button
+                  class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-0 rounded"
+                >
+                  <div
+                    class="flex flex-row items-center justify-center drop-shadow-lg"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-5 h-5 mr-2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 12.75l6 6 9-13.5"
+                      />
+                    </svg>
+                    <a
+                      href="#"
+                      class="text-base font-medium text-white hover:text-indigo-50"
+                      >Vahvista</a
+                    >
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-1 flex-col md:pl-64">
+        <div
+          class="sticky top-0 z-10 bg-white pl-1 pt-1 sm:pl-3 sm:pt-3 md:hidden"
+        >
+          <button
+            type="button"
+            class="-ml-0.5 -mt-0.5 inline-flex h-12 w-12 items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          >
+            <span class="sr-only">Open sidebar</span>
+            <!-- Heroicon name: outline/bars-3 -->
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <main class="flex-1">
+          <div class="py-6">
+            <div class="max-w-8xl pr-2">
+              <!-- Plus Icon -->
+              <!-- TABLE -->
+              <div class="pl-6    pr-4 drop-shadow-xl">
+                <div class="flex flex-col">
+                  <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div
+                      class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8"
+                    >
+                      <div
+                        class="overflow-visible shadow ring-1 ring-black ring-opacity-5 md:rounded-lg"
+                      >
+                        <table class="min-w-full divide-y divide-gray-300">
+                          <thead class="bg-white">
+                            <tr class="divide-x divide-gray-300">
+                              <th
+                                scope="col"
+                                class="py-3.5 pl-4 pr-4 text-right text-sm font-semibold text-gray-900 sm:pl-6"
+                              ></th>
+
+                              <th
+                                scope="col"
+                                class="py-3.5 pl-4 pr-6 text-right text-sm font-semibold text-gray-900 sm:pl-6 relative"
+                              >
+                                Toteuma
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />3/2022
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Toteuma
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />3/2021
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Budjetti
+
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />3/2022
+                              </th>
+
+                              <th
+                                scope="col"
+                                class="py-3.5 pl-4 pr-6 text-right text-sm font-semibold text-gray-900 sm:pl-6 relative"
+                              >
+                                Toteuma
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />1-3/2022
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Toteuma
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />-13/2021
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Budjetti
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />1-3/2022
+                              </th>
+
+                              <th
+                                scope="col"
+                                class="py-3.5 pl-4 pr-6 text-right text-sm font-semibold text-gray-900 sm:pl-6 relative"
+                              >
+                                Toteuma
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />1-12/2022
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Budjetti
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />1-12/2021
+                              </th>
+                              <th
+                                scope="col"
+                                class="px-4 py-3.5 pr-6 text-right text-sm font-semibold text-gray-900 relative"
+                              >
+                                Ennuste
+                                <div
+                                  class="text-lg absolute top-[3px] right-[4px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <br />1-12/2022
+                                <div
+                                  class="absolute top-[24px] right-[-12px] hover:bg-grey-700 cursor-pointer"
+                                >
+                                  <svg
+                                    class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      stroke="grey"
+                                      fill="white"
+                                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    ></path>
+                                  </svg>
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody class="divide-y divide-gray-300 bg-white">
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                <div class="flex flex-row">
+                                  Liikevaihto
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                50 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                48 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                49 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                155 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                142 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                154 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                569 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                610 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                621 000€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Ostot
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                21 650€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                21 800€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                21 500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                80 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                83 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                86 900€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Palvelujen ostot
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                3 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                3 700€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                3 500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                8 200€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                8 500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                8 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                31 420€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                32 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                32 800€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Henkilöstökulut
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                21 900€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                19 280€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                21 800€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                65 700€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                57 900€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                65 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                231 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                261 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                262 800€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Muut kulut
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                5 590€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                5 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                3 770€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                16 770€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                15 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                11 310€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                60 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                45 240€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                67 080€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                Käyttökate
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                11 910€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                13 020€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                12 930€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                42 680€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                38 800€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                47 790€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                193 380€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                187 560€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                171 420€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Poistot ja arvonalentumiset
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                2 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                2 300€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                2 550€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 800€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                6 900€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 650€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                27 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                30 600€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                31 200€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                Liikevoitto (-tappio)
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                9 310€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                10 720€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                10 380€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                34 880€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                31 900€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                40 140€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                165 780€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                156 960€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                140 220€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Rahoitustuotot ja -kulut
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                720€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                540€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                2 160€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                4 500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 620€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                18 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                6 480€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                8 640€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                Voitto (-tappio) ennen satunnaisia eriä
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                8 590€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                9 220€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                9 840€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                32 720€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                27 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                38 520€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                147 780€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                150 480€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                131 580€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Satunnaiset erät
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 400€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                Voitto (-tappio) ennen tilinpäätössiirtoja ja
+                                veroja eriä
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                8 590€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                7 820€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                9 840€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                32 720€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                26 000€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                38 520€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                146 380€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                150 4 80€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                131 580€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Tilinpäätössiirrot
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                100€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                120€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                100€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                500€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                360€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                300€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 440€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 200€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 200€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                <div class="flex flex-row">
+                                  Tuloverot
+
+                                  <div
+                                    class="relative top-0.5 ml-1 cursor-pointer"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 32 32"
+                                      stroke-width="1.5"
+                                      stroke="currentColor"
+                                      class="w-6 h-6"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 738€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 588€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                1 988€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                6 604€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                5 272€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                7 764€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                29 564€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                30 336€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                26 556€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-normal"
+                              >
+                                Muut välittömät verot
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right text-gray-500"
+                              >
+                                0€
+                              </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-300 bg-gray-100">
+                              <td
+                                class="whitespace-nowrap py-3 pl-4 pr-4 text-sm font-medium text-gray-900 sm:pl-6 font-extrabold"
+                              >
+                                Tulos
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                6 952€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                6 352€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                7 952€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                26 616€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                21 088€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                31 056€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                118 256€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                121 344€
+                              </td>
+                              <td
+                                class="whitespace-nowrap pr-6 text-sm text-right font-bold"
+                              >
+                                106 224€
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /TABLE -->
+              <!-- /End replace -->
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
